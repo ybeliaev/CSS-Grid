@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     padding: 0;
@@ -12,4 +15,19 @@ h1, h2, h3 {
 .wrapper{
     max-width: 1024px;
     margin: 0 auto;
+}
+pre code {
+    font-size: 1rem;
+}
+.item {
+    padding: 10px;
+    border: 3px solid rgb(60, 120, 250);
+    background-color: rgba(144, 196, 255, 0.5);
+    border-radius: 3px;
+}
+.container-1 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 200px 100px;
+    grid-gap: 20px;
 }
