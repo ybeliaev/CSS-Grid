@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper">
         <h1>Grid tutorial.</h1>
-        <h2>1. Base.</h2>
+        <h2>1.Base.</h2>
         <div class="container-1">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -31,7 +31,7 @@
             }
         </code></pre>
         <!-- ******************************************************************** -->
-        <h2>2. Track sizing.</h2>
+        <h2>2.Track sizing.</h2>
         <div class="container-2">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -79,7 +79,7 @@
             }
         </code></pre>
         <!-- ******************************************************************** -->
-        <h2>3. Using the fr unit.</h2>
+        <h2>3.Using the fr unit.</h2>
         <div class="container-5">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -106,6 +106,53 @@
             .container {
                 display: grid;
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <!-- ******************************************************************** -->
+        <h2>4.Repeat notation.</h2>
+        <div class="container-7">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(3, minmax(100px, 1fr));
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <div class="container-8">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(3, 1fr 200px);
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <div class="container-9">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(3, 1fr );
                 grid-template-rows: auto 100px;
                 grid-gap: 20px;
             }
