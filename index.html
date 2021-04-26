@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper">
         <h1>Grid tutorial.</h1>
-        <h2>Example 1</h2>
+        <h2>1. Base.</h2>
         <div class="container-1">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -23,13 +23,94 @@
             <div class="item">Five</div>
         </div>
         <pre><code class="css">
-            .container-1 {
+            .container {
                 display: grid;
                 grid-template-columns: 150px 150px 150px;
                 grid-template-rows: 200px 100px;
                 grid-gap: 20px;
             }
         </code></pre>
+        <!-- ******************************************************************** -->
+        <h2>2. Track sizing.</h2>
+        <div class="container-2">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns: 150px 150px 150px;
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <div class="container-3">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns: 20vw 150px auto;
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <div class="container-4">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content()">fit-content()</a>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns: fit-content(10em) fit-content(10em) fit-content(10em);
+                grid-template-rows: 100px 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <!-- ******************************************************************** -->
+        <h2>3. Using the fr unit.</h2>
+        <div class="container-5">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr;
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+        <div class="container-6">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+        </code></pre>
+
 
     </div><!-- wrapper -->
     <script src='./src/highlight/highlight.pack.js'></script>
