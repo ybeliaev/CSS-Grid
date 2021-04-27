@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper">
         <h1>Grid tutorial.</h1>
-        <h2>1.Base.</h2>
+        <h2>1. Base.</h2>
         <div class="container-1">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -31,7 +31,7 @@
             }
         </code></pre>
         <!-- ******************************************************************** -->
-        <h2>2.Track sizing.</h2>
+        <h2>2. Track sizing.</h2>
         <div class="container-2">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -79,7 +79,7 @@
             }
         </code></pre>
         <!-- ******************************************************************** -->
-        <h2>3.Using the fr unit.</h2>
+        <h2>3. Using the fr unit.</h2>
         <div class="container-5">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -111,7 +111,7 @@
             }
         </code></pre>
         <!-- ******************************************************************** -->
-        <h2>4.Repeat notation.</h2>
+        <h2>4. Repeat notation.</h2>
         <div class="container-7">
             <div class="item">One</div>
             <div class="item">Two</div>
@@ -155,6 +155,126 @@
                 grid-template-columns:  repeat(3, 1fr );
                 grid-template-rows: auto 100px;
                 grid-gap: 20px;
+            }
+        </code></pre>
+         <!-- ******************************************************************** -->
+         <h2>5. Auto-fill && auto-fit.</h2>
+         <div class="container-10">
+             <div class="item">One</div>
+             <div class="item">Two</div>
+             <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+             <div class="item">Four</div>
+             <div class="item">Five</div>
+         </div>
+         <pre><code class="css">
+             .container {
+                 display: grid;
+                 grid-template-columns:  repeat(auto-fill, 200px);
+                 grid-template-rows: auto 100px;
+                 grid-gap: 20px;
+             }
+             /* grid-template-columns:  repeat(auto-fill, 1fr) - don't work */
+         </code></pre>
+         <p>When there is no space left in the line, the elements go to the line.</p>
+         <div class="container-11">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fill, minmax(200px, 1fr));
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+            
+        </code></pre>
+        <div class="container-12">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fill, minmax(200px, 1fr));
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }
+            
+        </code></pre>
+        <div class="container-13">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-rows: auto 100px;
+                grid-gap: 20px;
+            }            
+        </code></pre>
+        <h2>6. Placing items.</h2>
+         <div class="container-14">
+             <div class="item item1">One</div>
+             <div class="item">Two</div>
+             <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+             <div class="item">Four</div>
+             <div class="item">Five</div>
+         </div>
+         <pre><code class="css">
+            .item1{
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }  
+            /* or so - it's the same */
+            .item1{
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }  
+            /* or  */    
+            .item1{
+                grid-column: 1 / 5;
+            }     
+         </code></pre>
+         <img src="./src/img/grid-1.png" alt="">
+         <div class="container-15">
+            <div class="item item1">One</div>
+            <div class="item item2">Two</div>
+            <div class="item item3">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item item4">Four</div>
+            <div class="item item5">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-rows: auto ;
+                grid-gap: 20px;
+            }
+            .item1{
+                grid-column: 1 / 5;
+            }
+            .item2{
+                grid-column: 1 ;
+                grid-row: 2;
+            }
+            .item3{
+                grid-column: 1 ;
+                grid-row: 2;
+            }
+            .item4{
+                grid-column: 2 / 4 ;
+                grid-row: 2;
+            }
+            .item5{
+                grid-column: 1 / -1 ;
+                grid-row: 3;
             }
         </code></pre>
 
