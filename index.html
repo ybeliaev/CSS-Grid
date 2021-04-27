@@ -277,6 +277,40 @@
                 grid-row: 3;
             }
         </code></pre>
+        <div class="container-16">
+            <div class="item item1">One</div>
+            <div class="item item2">Two</div>
+            <div class="item item3">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item item4">Four</div>
+            
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-rows: auto ;
+                grid-gap: 20px;
+            }
+            .item1{
+                grid-column: 1 / span 3;
+                grid-row: 1;
+            }
+            .item2{
+                grid-column: 1 ;
+                grid-row: 2;
+            }
+            .item3{
+                grid-column: 2 / 4 ;
+                grid-row: 2;
+            }
+            .item4{
+                grid-column: 1 / -1 ;
+                grid-row: 3;
+            }
+            /* SPAN - the number of tracks that the element should occupy. */
+        </code></pre>
+
+
 
 
     </div><!-- wrapper -->
