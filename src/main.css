@@ -216,3 +216,27 @@ pre code {
     grid-gap: 20px;  
     grid-auto-flow: column;  
 }
+
+
+.container-20 {
+    display: grid;
+    grid-template-areas:
+    'header header header header header'
+    'menu main main main right'
+    'menu footer footer footer footer';
+    grid-gap: 20px;
+}
+.container-20 .item1 { grid-area: header; }
+.container-20 .item2 { grid-area: menu; }
+.container-20 .item3 { grid-area: main; }
+.container-20 .item4 { grid-area: right; }
+.container-20 .item5 { grid-area: footer; }
+
+@media only screen and (max-width: 900px) {
+    .container-20 {        
+        grid-template-areas:
+        'header header header header header'
+        'menu menu main main right'
+        'footer footer footer footer footer';        
+    }
+  }

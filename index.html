@@ -389,6 +389,39 @@
             }
             
         </code></pre>
+        <h2>7. Named lines.</h2>
+        <div class="container-20">
+            <div class="item item1">One</div>
+            <div class="item item2">Two</div>
+            <div class="item item3">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item item4">Four</div>
+            <div class="item item5">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-areas:
+                'header header header header header'
+                'menu main main main right'
+                'menu footer footer footer footer';
+                grid-gap: 20px;
+            }
+            .item1 { grid-area: header; }
+            .item2 { grid-area: menu; }
+            .item3 { grid-area: main; }
+            .item4 { grid-area: right; }
+            .item5 { grid-area: footer; }
+            
+            /*Resize the window to 500 pixels see the effect.*/
+            @media only screen and (max-width: 900px) {
+                .container {        
+                    grid-template-areas:
+                    'header header header header header'
+                    'menu menu main main right'
+                    'footer footer footer footer footer';        
+                }
+              }
+        </code></pre>
 
 
 
