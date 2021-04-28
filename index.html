@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500&family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/main.css">
-    <link rel="stylesheet" href="./src/highlight/styles/atom-one-dark.css">
+    <link rel="stylesheet" href="./src/highlight/styles/atom-one-dark-reasonable.css">
     <title>CSS Grid tutorial</title>
 </head>
 <body>
@@ -345,6 +345,49 @@
                 grid-column: 1 / -1 ;
                 grid-row: 3;
             }
+        </code></pre>
+        <!-- ******************************************************************** -->
+        <h2>6. Auto-placement.</h2>
+        <div class="container-18">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-rows: minmax(100px, auto) ;
+                grid-gap: 20px;    
+            }
+            .container :first-child{
+                grid-column: auto / span 2;
+            }
+            /* :first-child - is item1 */
+            .container :nth-child(even){
+                grid-column: auto / span 2;
+            }
+        </code></pre>
+        <div class="container-19">
+            <div class="item">One</div>
+            <div class="item">Two</div>
+            <div class="item">Three has much more content. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+            <div class="item">Four</div>
+            <div class="item">Five</div>
+        </div>
+        <pre><code class="css">
+            .container {
+                display: grid;
+                grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-rows: minmax(100px, auto) ;
+                grid-gap: 20px;  
+                grid-auto-flow: column; 
+                /* CSS-свойство управляет поведением автоматически размещаемых элементов, 
+                точно указывая, как они попадают в сетку. */
+            }
+            
         </code></pre>
 
 

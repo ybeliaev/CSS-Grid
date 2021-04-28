@@ -197,3 +197,22 @@ pre code {
     grid-column: 1 / -1 ;
     grid-row: 3;
 }
+.container-18 {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: minmax(100px, auto) ;
+    grid-gap: 20px;    
+}
+.container-18 :first-child{
+    grid-column: auto / span 2;
+}
+.container-18 :nth-child(even){
+    grid-column: auto / span 2;
+}
+.container-19 {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: minmax(100px, auto) ;
+    grid-gap: 20px;  
+    grid-auto-flow: column;  
+}
